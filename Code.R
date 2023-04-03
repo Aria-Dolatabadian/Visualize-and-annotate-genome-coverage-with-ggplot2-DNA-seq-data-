@@ -1,7 +1,6 @@
-
 library("rtracklayer")
 library("ggcoverage")
-
+library("BSgenome.Hsapiens.UCSC.hg19")
 
 #if (!require("BiocManager", quietly = TRUE))
 #    install.packages("BiocManager")
@@ -25,10 +24,10 @@ basic.coverage
 
 #Add GC, ideogram and gene annotaions.
 
-#basic.coverage +
-#  geom_gc(bs.fa.seq=BSgenome.Hsapiens.UCSC.hg19) +
-#  geom_gene(gtf.gr=gtf.gr) +
-#  geom_ideogram(genome = "hg19")             #error
+basic.coverage +
+  geom_gc(bs.fa.seq=BSgenome.Hsapiens.UCSC.hg19) +
+  geom_gene(gtf.gr=gtf.gr) +
+  geom_ideogram(genome = "hg19")             
 
 
 #Single-nucleotide level
